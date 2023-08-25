@@ -1,0 +1,34 @@
+:root {
+    --primary-color: #29cef7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    color: #faebd7;
+    overflow: hidden;
+    background-color: darkcyan;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.4;
+}
+
+.btn {
+    color: #faebd7;
+    cursor: pointer;
+    border: 3px solid #faebd7;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+.btn:hover {
+    color: #ce1026;
+}
