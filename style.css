@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #29cef7;
+    --clr-neon: hsl(120 100% 54%);
+    --clr-bg: hsl(120 20% 25%);
 }
 
 * {
@@ -12,23 +13,126 @@ body {
     height: 100vh;
     color: #faebd7;
     overflow: hidden;
-    background-color: darkcyan;
+    text-align: center;
+    background-color: #27282c;
 }
 
 h1 {
     font-size: 4rem;
-    line-height: 1.4;
+    line-height: 2.4;
 }
 
 .btn {
     color: #faebd7;
     cursor: pointer;
     border: 3px solid #faebd7;
-    background-color: transparent;
+    background-color: #27282c;
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
+    transition: 0.25s;
+    border-radius: 0.25em;
+
 }
 
 .btn:hover {
-    color: #ce1026;
+    color: var(--clr-neon);
+    border-color: var(--clr-neon);
+    /*background-color: var(--clr-bg);*/
+    box-shadow: 0 0 1em 0 var(--clr-neon);
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background-color: #27282c;
+}
+
+.screen.up {
+    margin-top: -100vh;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.stats div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stats div span {
+    margin-left: 10px;
+    color: var(--clr-neon);
+}
+
+.board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    flex: 1;
+    background-color: #27282c;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#minimise {
+    display: none;
+
+}
+
+.circle {
+    /*width: 30px;
+    height: 30px;*/
+    position: absolute;
+    background-color: red;
+    animation: circle 1s linear forwards;
+    border-radius: 50%;
+}
+
+@keyframes circle {
+    0% {
+        transform: scale(0.25%);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.results p {
+    font-size: 2rem;
+}
+
+.results p span {
+    color: var(--clr-neon);
+    margin-left: 10px;
 }
