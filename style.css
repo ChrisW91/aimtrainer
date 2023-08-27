@@ -1,6 +1,7 @@
 :root {
     --clr-neon: hsl(120 100% 54%);
     --clr-bg: hsl(120 20% 25%);
+    --clr-circle: hsl(304, 100%, 54%);
 }
 
 * {
@@ -56,6 +57,17 @@ h1 {
     margin-top: -100vh;
 }
 
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.list li {
+    margin: 10px;
+}
+
 .stats {
     display: flex;
     justify-content: space-between;
@@ -104,9 +116,10 @@ h1 {
     /*width: 30px;
     height: 30px;*/
     position: absolute;
-    background-color: red;
-    animation: circle 1s linear forwards;
+    background-color: var(--clr-circle);
+    animation: circle 1.5s linear forwards;
     border-radius: 50%;
+    box-shadow: 0 0 2em 0 var(--clr-circle);
 }
 
 @keyframes circle {
@@ -114,7 +127,7 @@ h1 {
         transform: scale(0.25%);
     }
 
-    100% {
+    75% {
         transform: scale(1);
     }
 }
