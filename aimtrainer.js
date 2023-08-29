@@ -81,6 +81,7 @@ function createRandomCircle() {
         circle.remove();
         createRandomCircle();
         missed++;
+        calculateAccuracy();
     });
 }
 
@@ -89,10 +90,10 @@ board.addEventListener("click", function (e) {
         hits++;
         e.target.remove();
         createRandomCircle();
-    } else {
-        missed++;
     }
-
+    //else {
+    //     missed++;
+    // }
 
     hitsEl.innerHTML = hits;
     calculateAccuracy();
