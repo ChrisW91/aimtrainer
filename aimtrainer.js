@@ -6,7 +6,11 @@ const startBtn = document.querySelector("#start"),
     hitsEl = document.querySelector("#hits"),
     accuracyEl = document.querySelector("#accuracy"),
     hitsOver = document.querySelector("#hits-over"),
-    accuracyOver = document.querySelector("#accuracy-over");
+    accuracyOver = document.querySelector("#accuracy-over"),
+    restartBtns = document.querySelectorAll(".restart"),
+    stopBtn = document.querySelector(".stop"),
+    fullScreenBtn = document.querySelector("#fullscreen"),
+    minimiseBtn = document.querySelector("#minimise")
 
 
 let time = 0,
@@ -29,7 +33,7 @@ timeList.addEventListener("click", function (e) {
 });
 
 function startGame() {
-    console.log("Game Started");
+    // console.log("Game Started");
     playing = true;
     interval = setInterval(decreaseTime, 1000);
     createRandomCircle();
@@ -56,7 +60,7 @@ function setTime(time) {
 }
 
 function createRandomCircle() {
-    console.log("Creating circle...")
+    // console.log("Creating circle...")
     if (!playing) {
         return;
     }
@@ -73,9 +77,9 @@ function createRandomCircle() {
     circle.style.top = `${y}px`;
     circle.style.left = `${x}px`;
 
-    console.log("Size:", size, "X:", x, "Y:", y);
+    // console.log("Size:", size, "X:", x, "Y:", y);
     board.append(circle);
-    console.log("Circle created and appended to the board.");
+    // console.log("Circle created and appended to the board.");
 
     circle.addEventListener("animationend", function () {
         circle.remove();
@@ -121,5 +125,28 @@ function calculateAccuracy() {
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+restartBtns.forEach(function (btn) {
+    btn.addEventListener("click", restartGame);
+});
+
+stopBtn.addEventListener("click", finishGame);
+
+
+function restartGame() {
+    // console.log("restartGame function called");
+    finishGame();
+    screens[0].classList.remove("up")
+    screens[1].classList.remove("up")
+    screens[2].classList.remove("up")
+    screens[3].classList.remove("up")
+    time = 0;
+    hits = 0;
+    missed = 0;
+    accuracy = 0;
+    playing = false;
+
 }
 
