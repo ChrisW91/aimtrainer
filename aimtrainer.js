@@ -8,9 +8,17 @@ const startBtn = document.querySelector("#start"),
     hitsOver = document.querySelector("#hits-over"),
     accuracyOver = document.querySelector("#accuracy-over"),
     restartBtns = document.querySelectorAll(".restart"),
-    stopBtn = document.querySelector(".stop"),
-    fullScreenBtn = document.querySelector("#fullscreen"),
-    minimiseBtn = document.querySelector("#minimise")
+    stopBtn = document.querySelector(".stop");
+
+
+const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        buttonClickSound.play();
+    });
+});
+
 
 
 let time = 0,
@@ -135,6 +143,7 @@ restartBtns.forEach(function (btn) {
 stopBtn.addEventListener("click", finishGame);
 
 
+
 function restartGame() {
     // console.log("restartGame function called");
     finishGame();
@@ -149,4 +158,5 @@ function restartGame() {
     playing = false;
 
 }
+
 

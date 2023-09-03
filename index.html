@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aim Trainer</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <audio id="buttonClickSound" src="sounds/techclick.wav" preload="auto"></audio>
+
 
     <div class="screen">
         <h1>Aim Trainer</h1>
@@ -19,7 +22,7 @@
         <h1>Choose Time</h1>
         <ul class="list" id="time-list">
             <li>
-                <button class="btn time-btn" data-time="10">2 min</button>
+                <button class="btn time-btn" data-time="120">2 min</button>
                 <button class="btn time-btn" data-time="300">5 min</button>
                 <button class="btn time-btn" data-time="600">10 min</button>
             </li>
@@ -41,8 +44,8 @@
         <div class="options">
             <button class="btn restart">Restart</button>
             <button class="btn stop">Stop</button>
-            <button class="btn" id="fullscreen">Full Screen</button>
-            <button class="btn" id="minimise">Minimise</button>
+            <!-- <button class="btn" id="fullscreen">Full Screen</button>
+            <button class="btn" id="minimise">Minimise</button> -->
 
         </div>
     </div>
