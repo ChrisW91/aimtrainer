@@ -120,7 +120,7 @@ h1 {
     height: 30px;*/
     position: absolute;
     background-color: var(--clr-circle);
-    animation: circle 1.5s linear forwards;
+    animation: circle 1s linear forwards;
     border-radius: 50%;
     box-shadow: 0 0 2em 0 var(--clr-circle);
 }
@@ -130,7 +130,7 @@ h1 {
         transform: scale(0.25%);
     }
 
-    75% {
+    65% {
         transform: scale(1);
     }
 }

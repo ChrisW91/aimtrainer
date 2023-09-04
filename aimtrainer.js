@@ -8,7 +8,10 @@ const startBtn = document.querySelector("#start"),
     hitsOver = document.querySelector("#hits-over"),
     accuracyOver = document.querySelector("#accuracy-over"),
     restartBtns = document.querySelectorAll(".restart"),
-    stopBtn = document.querySelector(".stop");
+    stopBtn = document.querySelector(".stop"),
+    clickVolume = document.querySelector("#buttonClickSound");
+
+clickVolume.volume = 0.1;
 
 
 const buttons = document.querySelectorAll('.btn');
@@ -16,6 +19,7 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', function () {
         buttonClickSound.play();
+
     });
 });
 
@@ -74,7 +78,7 @@ function createRandomCircle() {
     }
 
     const circle = document.createElement("div");
-    const size = getRandomNumber(30, 100);
+    const size = getRandomNumber(40, 50);
     const color = "#BC13FE";
     const { width, height } = board.getBoundingClientRect();
     const x = getRandomNumber(0, width - size);
