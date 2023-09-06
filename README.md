@@ -1,4 +1,4 @@
 # aimtrainer
 
 
-try here [link] https://chrisw91.github.io/aimtrainer/
+Play Game https://chrisw91.github.io/aimtrainer/
